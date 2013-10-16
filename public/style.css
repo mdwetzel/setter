@@ -1,0 +1,15 @@
+input[type="number"] {
+	font-size:2em;
+	padding:5px;
+	width:130px;
+}
+
+label { 
+	font-size:1.4em;
+}
+
+form { 
+	background-color:lightblue;
+	float:left;
+	padding:10px;
+}
