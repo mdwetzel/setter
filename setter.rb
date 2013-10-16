@@ -20,7 +20,6 @@ post '/' do
   @weights[:row]        = calculate(row)        if row > 0
   @weights[:deadlift]   = calculate(deadlift)   if deadlift > 0
 
-  
   erb :form
 end
 
