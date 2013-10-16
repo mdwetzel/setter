@@ -1,42 +1,44 @@
 <form action="/" method="post">
 	<label for="squat">Squat</label>
 	<br>
-	<input type="number" name="squat" id="squat" value="270">
+	<input type="number" name="squat" id="squat">
 	<br>
 	<label for="bench">Bench Press</label>
 	<br>
-	<input type="number" name="bench" id="bench" value="160">
+	<input type="number" name="bench" id="bench">
 	<br>
 	<label for="military">Military Press</label>
 	<br>
-	<input type="number" name="military" id="military" value="100">
+	<input type="number" name="military" id="military">
 	<br>
 	<label for="row">Bent-Over Row</label>
 	<br>
-	<input type="number" name="row" id="row" value="155">
+	<input type="number" name="row" id="row">
 	<br>
 	<label for="deadlift">Deadlift</label>
 	<br>
-	<input type="number" name="deadlift" id="deadlift" value="255">
+	<input type="number" name="deadlift" id="deadlift">
 	<br>
 	<input type="submit" value="Calculate">
 </form>
 
 <% if @weights %>
-<table>
-<% @weights.each do |key, value| %>
-<tr><td><%= key.capitalize %></td></tr>
-<tr>
-	<th>Reps</th>
-	<th>Weight</th>
-</tr>
-<% value.each do |x| %>
-<tr>
-	<td><%= x[:reps] %></td>
-	<td><%= x[:weight] %></td>
-</tr>
-<% end %>
-
-<% end %>
-</table>
+	<table class="table table-striped table-condensed">
+		<% @weights.each do |key, value| %>
+			<tr class="header">
+				<td class="lift"><%= key.capitalize %></td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<th>Reps</th>
+				<th>Weight</th>
+			</tr>
+			<% value.each do |x| %>
+				<tr>
+					<td><%= x[:reps] %></td>
+					<td><%= x[:weight] %></td>
+				</tr>
+			<% end %>
+		<% end %>
+	</table>
 <% end %>
